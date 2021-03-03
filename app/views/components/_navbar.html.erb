@@ -1,0 +1,28 @@
+<div class="border-bottom p-3 position-relative">
+    <div class='row justify-content-between align-items-center'>        
+        <div class='pl-3'>
+          <%= link_to "/" do %>
+                <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class:'logo-nav' %> 
+            <% end %>
+        </div>
+        <div class='pr-3 d-flex'>
+            <% if user_signed_in? %>
+                <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <%= image_tag "https://kitt.lewagon.com/placeholder/users/romano78", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
+                        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+                </div>  
+            <% else %>
+                <%= link_to 'Login', new_user_session_path, class: 'nav-button' %>
+            <% end %>
+        </div>
+    </div>
+</div>
