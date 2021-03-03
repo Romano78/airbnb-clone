@@ -1,6 +1,46 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.nav-button {
+  appearance: none;
+  background: transparent;
+  border: 0px;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0px;
+  outline: none;
+  overflow: visible;
+  padding: 12px;
+  text-align: inherit;
+  text-decoration: none;
+  user-select: auto;
+  position: relative;
+  white-space: nowrap;
+  z-index: 1 !important;
+  color: black;
+  &:hover {
+    text-decoration: none;
+    color: black;
+  }
+
+  &:hover::before {
+    background: #f7f7f7 !important;
+  }
+
+  &:before {
+    border-radius: 22px;
+    bottom: 0px;
+    content: "";
+    left: -3px;
+    position: absolute;
+    right: -3px;
+    top: 0px;
+    z-index: -1 !important;
+  }
+}
+
+.logo-nav {
+  width: 40px;
 }
 
 .navbar-lewagon .navbar-collapse {
