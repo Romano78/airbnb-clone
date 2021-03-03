@@ -8,8 +8,10 @@
 
           <div class="card-footer">
             <%= link_to 'About', flat_path(flat) %>
-            <%= link_to 'Edit', edit_flat_path(flat) %>
-            <%= link_to 'Delete', flat_path(flat), method: :delete %>
+            <% if policy(flat).edit? || policy(flat).destroy? %>
+              <%= link_to 'Edit', edit_flat_path(flat) %>
+              <%= link_to 'Delete', flat_path(flat), method: :delete %>
+            <% end %>
           </div>
         </div>
       <% end %>

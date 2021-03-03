@@ -53,6 +53,7 @@ gem 'devise'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.12.0'
+gem 'pundit'
 gem 'simple_form'
 
 gem 'faker'
