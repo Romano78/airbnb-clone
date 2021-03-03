@@ -5,7 +5,9 @@
                 <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png", class:'logo-nav' %> 
             <% end %>
         </div>
-        <div class='pr-3 d-flex'>
+        <div class='pr-3 d-flex align-items-center'>
+            <%= link_to 'All Flats', flats_path, class: 'nav-button' %>
+            <%= link_to 'Create Flat', new_flat_path, class: 'nav-button' %>
             <% if user_signed_in? %>
                 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -21,7 +23,7 @@
                 </div>
                 </div>  
             <% else %>
-                <%= link_to 'Login', new_user_session_path, class: 'nav-button' %>
+                <%= link_to 'Login', new_user_session_path %>
             <% end %>
         </div>
     </div>
