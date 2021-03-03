@@ -1,0 +1,78 @@
+.create-button-link {
+  width: 50px;
+  height: 50px;
+  padding: 10px 15px;
+  border: none;
+  background: white;
+  color: black;
+  border-radius: 5px;
+  opacity: 0.7;
+  text-decoration: none;
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: black;
+    opacity: 1;
+  }
+}
+
+.upload-button {
+  pointer-events: auto;
+  cursor: pointer;
+  background: #e7e7e7;
+  border: none;
+  padding: 10px;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  .submit-input-review {
+    color: #fff;
+    border: none;
+    background: transparent;
+    position: relative;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.upload-button--pan {
+  font-weight: 700;
+  border: 2px solid #000;
+  border-radius: 3rem;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    background: #000;
+    transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+  }
+
+  &:hover::before {
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+.delete-button {
+  border: none;
+  background: none;
+}

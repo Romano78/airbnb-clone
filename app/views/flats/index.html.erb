@@ -1,0 +1,17 @@
+<div class="container mt-5 mb-5">
+  <div class="row-test">
+      <% @flats.each do |flat| %>
+        <div class="card">
+          <p><%= flat.rating %></p>
+          <h3><%= flat.name %></h3>
+          <p><%= flat.description %></p>
+
+          <div class="card-footer">
+            <%= link_to 'About', flat_path(flat) %>
+            <%= link_to 'Edit', edit_flat_path(flat) %>
+            <%= link_to 'Delete', flat_path(flat), method: :delete %>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>

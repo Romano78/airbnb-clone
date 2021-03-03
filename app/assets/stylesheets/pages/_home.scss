@@ -1,4 +1,15 @@
 // Specific CSS for your home-page
 body {
-  background-color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #eee;
+  position: relative;
+}
+
+.body-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

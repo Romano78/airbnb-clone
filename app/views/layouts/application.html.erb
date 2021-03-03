@@ -13,7 +13,11 @@
   </head>
 
   <body>
-    <%= render 'components/navbar' %>
-    <%= yield %>
+    <div class="body-wrapper">
+      <%= render 'components/navbar' %>
+      <%= yield %>
+      <%= render 'components/footer' %>
+    </div>
+
   </body>
 </html>

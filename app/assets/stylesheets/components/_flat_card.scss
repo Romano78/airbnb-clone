@@ -1,0 +1,22 @@
+#carouselExampleIndicators {
+  width: 500px;
+  border-radius: 20px;
+  padding-top: 10px;
+}
+
+.carouseld-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.row-test {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row-gap: 20px;
+
+  @media (min-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+  }
+}
