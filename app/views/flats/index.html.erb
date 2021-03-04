@@ -5,14 +5,14 @@
   <div class="flat-index-row">
       <% @flats.each do |flat| %>
         <div class="card" style="width: 18rem;">
-          <img src="https://source.unsplash.com/random" class="card-img-top" alt="...">
+          <img src="https://source.unsplash.com/600x400/?condo" class="card-img-top" alt="...">
           <div class="card-body">
               <h5 class="card-title"><%= flat.name %></h5>
               <h6 class="card-subtitle mb-2 text-muted"><%= flat.address %></h6>
               <p class="card-text"><%= flat.description %></p>
               <%= link_to 'More info', flat_path(flat), class: 'btn btn-primary' %>
               <% if policy(flat).edit? || policy(flat).destroy? %>
-                <%= link_to 'Edit', flat_path(flat), class: "btn btn-warning" %>
+                <%= link_to 'Edit', edit_flat_path(flat), class: "btn btn-warning" %>
                 <%= link_to 'Delete', flat_path(flat), method: :delete, data: {message: "are you sure you want to delete this item ? "}, class: 'btn btn-danger' %>
               <% end %>
             </div>

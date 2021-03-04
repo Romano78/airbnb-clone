@@ -9,3 +9,11 @@ body {
   color: #212529;
   background-color: #ffff;
 }
+
+.body-wrapper {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
