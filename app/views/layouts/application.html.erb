@@ -10,13 +10,13 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+
   </head>
 
   <body>
     <div class="body-wrapper">
       <%= render 'components/navbar' %>
       <%= yield %>
-      <%= render 'components/footer' %>
     </div>
 
   </body>

@@ -1,5 +1,61 @@
-<div class="container mt-5"> 
-    <div>
-        <h2><%= @flat.name %></h2>
+<div class="map" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200)"></div>
+<div class="container margin-top-negative">
+    <div class="row">  
+        <div class="col-8">
+              <div class="flat-show-card">
+                <h1><%= @flat.name %></h1>
+                <p class="flat-show-address"><%= @flat.address %></p>
+              </div>
+              <div class="flat-show-card">
+                <h2>a bit about more about this flat....</h2>
+                <p><%= @flat.description %></p>
+                <div   div class="map" style="background-image: url('https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/-119.8615,34.4143,15.69,0/300x200?access_token=pk.eyJ1Ijoicm9tYW5vNzUiLCJhIjoiY2s5ZGMxZXlwMDI1cDNmcGI2dXgzeW1kciJ9.HAqoC59TN-sScg7mC0uvGw')"></div>
+              </div>
+        </div>
+        <div class="col-4">
+            <div class="flat-show-card">
+                <h5>Book this place !</h5>
+                <%# place holder for the actual form  %>
+                <form action>
+                    <div class="input-group">
+                        <span class="input-group-addon" id="basic-addon1">From:</span>
+                        <input type="text" class="form-control" placeholder="03/10/2021" aria-label="Username" aria-describedby="basic-addon1" >
+                    </div>
+                    <div class="input-group mt-2">
+                        <span class="input-group-addon" id="basic-addon1">To:</span>
+                        <input type="text" class="form-control" placeholder="03/19/2021" aria-label="Username" aria-describedby="basic-addon1" >
+                    </div>
+                    <div class="input-group mt-2">
+                        <input type="submit" class="btn btn-success w-100" value="Book" placeholder="03/10/2021" aria-label="Username" aria-describedby="basic-addon1" >
+                    </div>
+                </form>
+            </div>
+            <div class="flat-show-card mt-2">
+                <h5>Details</h5>
+                <div class="d-flex">
+                    <div class="flex mr-2">
+                        <i class="fas fa-user-friends"></i>
+                        <span>3</span>
+                    </div>
+                    <div class="flex ml-3">
+                        <i class="fas fa-euro-sign"></i>
+                        <span>57</span>
+                    </div>
+                </div>
+            </div>
+            <div class="flat-show-card mt-2">
+                <div class="show-flex-align">
+                    <h6 class="show-share-title">Share</h6>
+                    <div class="d-flex">
+                        <i class="fas fa-euro-sign"></i>
+                        <i class="fas fa-euro-sign"></i>
+                        <i class="fas fa-euro-sign"></i>
+                        <i class="fas fa-euro-sign"></i>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
     </div>
 </div>
+
