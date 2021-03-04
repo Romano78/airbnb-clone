@@ -1,19 +1,22 @@
+<div class="flat-index-header">
+  <h2>All of our flats (<%= @flats.count %>)</h2>
+</div>
 <div class="container mt-5 mb-5">
-  <div class="row-test">
+  <div class="flat-index-row">
       <% @flats.each do |flat| %>
-        <div class="card">
-          <p><%= flat.rating %></p>
-          <h3><%= flat.name %></h3>
-          <p><%= flat.description %></p>
-
-          <div class="card-footer">
-            <%= link_to 'About', flat_path(flat) %>
-            <% if policy(flat).edit? || policy(flat).destroy? %>
-              <%= link_to 'Edit', edit_flat_path(flat) %>
-              <%= link_to 'Delete', flat_path(flat), method: :delete %>
-            <% end %>
+        <div class="card" style="width: 18rem;">
+          <img src="https://source.unsplash.com/random" class="card-img-top" alt="...">
+          <div class="card-body">
+              <h5 class="card-title"><%= flat.name %></h5>
+              <h6 class="card-subtitle mb-2 text-muted"><%= flat.address %></h6>
+              <p class="card-text"><%= flat.description %></p>
+              <%= link_to 'More info', flat_path(flat), class: 'btn btn-primary' %>
+              <% if policy(flat).edit? || policy(flat).destroy? %>
+                <%= link_to 'Edit', flat_path(flat), class: "btn btn-warning" %>
+                <%= link_to 'Delete', flat_path(flat), method: :delete, data: {message: "are you sure you want to delete this item ? "}, class: 'btn btn-danger' %>
+              <% end %>
+            </div>
           </div>
-        </div>
       <% end %>
   </div>
 </div>
