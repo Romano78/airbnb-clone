@@ -4,14 +4,11 @@
 
     <div  class="booking-row">
         <% @booked_flats.each do |flat| %>
-             <% flat.bookings.each do |booking| %>
-               <%= booking.user.name %>
-               <%= booking.status %>
-            <%= link_to "<i class='fas fa-check'></i>".html_safe, booking_path(booking,  {status: 'Confirmed'}), method: :patch %>
-
-             <% end %>
+ 
             <div class="booking-card p-3">
-                <%# <h5 class="">Booking From: <%= User.find(booking.user.id).name.capitalize</h5> %>
+                <% flat.bookings.each do |booking| %>
+                    <h5 class="">Booking From: <%= User.find(booking.user.id).name.capitalize%></h5>
+                <% end %>
                 <p><span class="pr-2">For:</span><%= flat.name %></p>
                     <p>From: <span class="pr-2"><%= flat.bookings.last.start_date %></span>To:<span class="pl-2"><%= flat.bookings.last.end_date %></span></p>
                     <p><span class="pr-2">Status:</span><%= flat.bookings.last.status %></p>
