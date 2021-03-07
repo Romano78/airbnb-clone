@@ -5,10 +5,16 @@ class FlatsController < ApplicationController
   def home; end
 
   def index
-    @flats = policy_scope(Flat)
+    @flats = if user_signed_in?
+               policy_scope(Flat).where("user_id != '#{current_user.id}'")
+             else
+               policy_scope(Flat).all
+             end
   end
 
-  def show; end
+  def show
+    @booking = Booking.new
+  end
 
   def new
     @flat = Flat.new

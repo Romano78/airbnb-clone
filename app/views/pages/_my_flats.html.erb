@@ -1,0 +1,15 @@
+<div class="container">
+    <h2 class="mb-4">My FLATS: </h2>
+    <div  class="booking-row">
+        <% @flats.each do |flat| %>
+            <div class="booking-card p-3">
+                <h5 class=""><%= flat.name %></h5>
+                <p><%= flat.address %></p>
+                <%= link_to flat_path(flat) do  %>
+                    <img src="https://source.unsplash.com/600x400/?condo" class="card-img-top" alt="...">
+
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+</div>

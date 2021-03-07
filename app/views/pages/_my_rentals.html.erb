@@ -1,0 +1,11 @@
+<div class="container">
+    <h2 class="mb-4">My Rentals: </h2>
+    <p>Item That I rented</p>
+    <div  class="booking-row">
+        <% @rentals.each do |rental| %>
+              <div class="booking-card p-3">
+                <%= rental.status %>
+              </div>
+        <% end %>
+    </div>
+ </div> 

@@ -28,6 +28,6 @@ class FlatPolicy < ApplicationPolicy
   private
 
   def user_authorization
-    record.user == user
+    record.user == user || user.admin
   end
 end

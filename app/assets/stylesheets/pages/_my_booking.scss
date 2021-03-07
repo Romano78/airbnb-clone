@@ -1,0 +1,10 @@
+.booking-row {
+  @media (min-width: 650px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (min-width: 1400px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
