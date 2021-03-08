@@ -8,6 +8,7 @@ class FlatsController < ApplicationController
              else
                policy_scope(Flat).all
              end
+    @search = Flat.where("name LIKE '%#{params[:search]}%' ")
   end
 
   def show
