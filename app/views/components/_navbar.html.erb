@@ -13,7 +13,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown">
-                        <%= image_tag "https://kitt.lewagon.com/placeholder/users/romano78", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                        <% if user_signed_in? %>
+                            <% if current_user.avatar.attached? %>
+                                <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                            <% else %>
+                                <%= image_tag "https://source.unsplash.com/XHVpWcr5grQ/200x200", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                            <% end %>
+                        <% end %>
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
                         <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
