@@ -47,6 +47,7 @@ GEM
     activerecord (6.1.3)
       activemodel (= 6.1.3)
       activesupport (= 6.1.3)
+    activerecord-reset-pk-sequence (0.2.1)
     activestorage (6.1.3)
       actionpack (= 6.1.3)
       activejob (= 6.1.3)
@@ -82,6 +83,10 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     erubi (1.10.0)
     execjs (2.7.0)
     faker (2.16.0)
@@ -231,11 +236,13 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  activerecord-reset-pk-sequence
   autoprefixer-rails
   bootsnap (>= 1.4.4)
   byebug
   cloudinary (~> 1.16.0)
   devise
+  dotenv-rails
   faker
   font-awesome-sass (~> 5.12.0)
   jbuilder (~> 2.7)

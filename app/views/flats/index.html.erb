@@ -5,7 +5,12 @@
   <div class="flat-index-row">
       <% @flats.each do |flat| %>
         <div class="card" style="width: 18rem;">
-          <img src="https://source.unsplash.com/600x400/?condo" class="card-img-top" alt="...">
+          <% if flat.photo.attached? %>
+            <%= cl_image_tag flat.photo.key %>
+            <% else %>
+            <img src="https://source.unsplash.com/600x400/?condo" class="card-img-top" alt="...">
+          <% end %>
+          
           <div class="card-body">
               <h5 class="card-title"><%= flat.name %></h5>
               <h6 class="card-subtitle mb-2 text-muted"><%= flat.address %></h6>

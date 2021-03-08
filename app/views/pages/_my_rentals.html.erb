@@ -7,7 +7,11 @@
                 <h3>You rented: <%= rental.flat.name %></h3>
                 <p><span>From:</span> <%= rental.start_date %> <span>To:</span> <%= rental.end_date %></p>
                 <p><span class="pr-2">Status:</span><%= rental.status %></p>
-                <img src="https://source.unsplash.com/600x400/?condo" class="card-img-top" alt="...">
+                <% if flat.photo.attached? %>
+                    <%= cl_image_tag rental.flat.photo.key, class: "card-img-top" %>
+                <% else %>
+                    <img src="https://source.unsplash.com/400x200/?condo" class="card-img-top" alt="...">
+                <% end %>
               </div>
         <% end %>
     </div>
