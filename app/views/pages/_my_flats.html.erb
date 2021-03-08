@@ -6,7 +6,11 @@
                 <h5 class=""><%= flat.name %></h5>
                 <p><%= flat.address %></p>
                 <%= link_to flat_path(flat) do  %>
-                    <img src="https://source.unsplash.com/600x400/?condo" class="card-img-top" alt="...">
+                    <% if flat.photo.attached? %>
+                        <%= cl_image_tag flat.photo.key, class: "card-img-top" %>
+                      <% else %>
+                        <img src="https://source.unsplash.com/400x200/?condo" class="card-img-top" alt="...">
+                    <% end %>
 
                 <% end %>
             </div>

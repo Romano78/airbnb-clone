@@ -10,16 +10,20 @@
                     <h5 class="">Booking From: <%= User.find(booking.user.id).name.capitalize%></h5>
                 <% end %>
                 <p><span class="pr-2">For:</span><%= flat.name %></p>
-                    <p>From: <span class="pr-2"><%= flat.bookings.last.start_date %></span>To:<span class="pl-2"><%= flat.bookings.last.end_date %></span></p>
-                    <p><span class="pr-2">Status:</span><%= flat.bookings.last.status %></p>
-                    <% if flat.bookings.last.status == 'Pending' %>
-                        <div class="booking-actions mb-3">
-                            <%= link_to "<i class='fas fa-check'></i>".html_safe, booking_path(flat.bookings.last,  {status: 'Confirmed'}), method: :patch %>
-                            <%= link_to "<i class='fas fa-ban'></i>".html_safe, booking_path(flat.bookings.last, {status: 'Cancelled'}), method: :patch %>
-                            <%= link_to "<i class='fas fa-question'></i>".html_safe, booking_path(flat.bookings.last, {status: 'Pending'}), method: :patch %>
-                        </div>
-                    <% end %>
-                <img src="https://source.unsplash.com/600x400/?condo" class="card-img-top" alt="...">
+                <p>From: <span class="pr-2"><%= flat.bookings.last.start_date %></span>To:<span class="pl-2"><%= flat.bookings.last.end_date %></span></p>
+                <p><span class="pr-2">Status:</span><%= flat.bookings.last.status %></p>
+                <% if flat.bookings.last.status == 'Pending' %>
+                    <div class="booking-actions mb-3">
+                        <%= link_to "<i class='fas fa-check'></i>".html_safe, booking_path(flat.bookings.last,  {status: 'Confirmed'}), method: :patch %>
+                        <%= link_to "<i class='fas fa-ban'></i>".html_safe, booking_path(flat.bookings.last, {status: 'Cancelled'}), method: :patch %>
+                        <%= link_to "<i class='fas fa-question'></i>".html_safe, booking_path(flat.bookings.last, {status: 'Pending'}), method: :patch %>
+                    </div>
+                <% end %>
+                <% if flat.photo.attached? %>
+                    <%= cl_image_tag flat.photo.key, class: "card-img-top" %>
+                <% else %>
+                    <img src="https://source.unsplash.com/400x200/?condo" class="card-img-top" alt="...">
+                <% end %>
             </div>
         <% end %>
     </div>

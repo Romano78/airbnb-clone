@@ -2,8 +2,6 @@ class FlatsController < ApplicationController
   before_action :set_flat, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!, only: %i[index show]
 
-  def home; end
-
   def index
     @flats = if user_signed_in?
                policy_scope(Flat).where("user_id != '#{current_user.id}'")
@@ -62,6 +60,6 @@ class FlatsController < ApplicationController
   end
 
   def set_params
-    params.require(:flat).permit(:name, :address, :description, :rating)
+    params.require(:flat).permit(:name, :address, :description, :rating, :photo)
   end
 end
