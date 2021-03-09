@@ -61,3 +61,4 @@ gem 'faker'
 gem 'activerecord-reset-pk-sequence'
 gem 'cloudinary', '~> 1.16.0'
 gem 'dotenv-rails', groups: %i[development test]
+gem 'geocoder'
