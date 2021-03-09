@@ -10,12 +10,13 @@ import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import { searchAnimation } from "./search";
 import { initMapbox } from "../plugins/init_mapbox";
+import { initAutocomplete } from "../plugins/init_autocomplete";
 
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
 
 document.addEventListener("turbolinks:load", () => {
-  searchAnimation();
   initMapbox();
+  initAutocomplete();
 });

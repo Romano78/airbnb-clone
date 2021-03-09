@@ -6,23 +6,16 @@
             <% end %>
         </div>
         <div class='pr-3 d-flex align-items-center'>
-            <%= simple_form_for :search, url: flats_path, method: :get do |f| %>
-                    <input
-                        class="search-input"
-                        id="input-value"
-                        type="text"
-                        name="search"
-                        id="search"
-                        placeholder="Search..."
-                    />
-                    <button class="search-btn" >
-                        <i class="fas fa-search"></i>
-                    </button>
-            <% end %>
+                <%= form_tag flats_path, method: :get, class: 'd-flex pr-3' do %>
+                    <%= text_field_tag :search,
+                        params[:query],
+                        class: "form-control",
+                        placeholder: "Find a movie"
+                    %>
+                    <%= submit_tag "Search", class: "btn btn-primary" %>
+                <% end %>
             <%= link_to 'All Flats', flats_path, class: 'nav-button' %>
             <%= link_to 'Create Flat', new_flat_path, class: 'nav-button' %>
-            <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-            <% end %>
             <% if user_signed_in? %>
                 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
