@@ -26,12 +26,12 @@ puts "creating #{bill}"
 
 bill_random_address = ['4526 Av Harvard Montréal QC H4A 2X2', '4202 Country Dr, Vernon, TX',
                        '16116 33rd Ave, Flushing, NY', '4, Place du Louvre  75042 Paris ', "8, rue de la Banque
-                       75084 Paris"]
+                       75084 Paris", '1222 June Way, Pasadena, MD']
 
 bob_random_address = ['1222 June Way, Pasadena, MD', '3151  Doctors Drive',
-                      '16 Villa Gaudelet, Paris', "2, rue Eugène Spuller 
+                      '16 Villa Gaudelet, Paris', "2, rue Eugène Spuller
                       75003 Paris", "2, Place Baudoyer
-                      75181 Paris " ]
+                      75181 Paris "]
 
 3.times do
   bob_flat = Flat.new(
@@ -41,6 +41,8 @@ bob_random_address = ['1222 June Way, Pasadena, MD', '3151  Doctors Drive',
     rating: (1..5).to_a.sample,
     user_id: bob.id
   )
+
+  bob_flat.address = bob_random_address.sample unless bob_flat.address != bob_flat.address
 
   bob_flat.save
 
@@ -56,6 +58,8 @@ bob_random_address = ['1222 June Way, Pasadena, MD', '3151  Doctors Drive',
     rating: (1..5).to_a.sample,
     user_id: bill.id
   )
+
+  bill_flat.address = bill_random_address.sample unless bill_flat.address != bill_flat.address
 
   bill_flat.save
 
