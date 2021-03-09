@@ -41,6 +41,8 @@ bob_random_address = ['3151  Doctors Drive', '16 Villa Gaudelet, Paris', "2, rue
     user_id: bob.id
   )
 
+  p bob_flat.address
+
   bob_flat.address = bob_random_address.sample unless bob_flat.address != bob_flat.address
 
   bob_flat.save
@@ -57,6 +59,8 @@ bob_random_address = ['3151  Doctors Drive', '16 Villa Gaudelet, Paris', "2, rue
     rating: (1..5).to_a.sample,
     user_id: bill.id
   )
+
+  p bill_flat.address
 
   bill_flat.address = bill_random_address.sample unless bill_flat.address != bill_flat.address
 
