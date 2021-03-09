@@ -8,7 +8,15 @@ class FlatsController < ApplicationController
              else
                policy_scope(Flat).all
              end
-    @search = Flat.where("name LIKE '%#{params[:search]}%' ")
+    if params[:search].present?
+      @search = Flat.global_search(params[:search])
+    else
+      @flats = if user_signed_in?
+                 policy_scope(Flat).where("user_id != '#{current_user.id}'")
+               else
+                 policy_scope(Flat).all
+               end
+    end
   end
 
   def show
