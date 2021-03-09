@@ -9,4 +9,4 @@ const searchAnimation = () => {
   });
 };
 
-export default searchAnimation;
+export { searchAnimation };

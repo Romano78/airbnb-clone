@@ -13,6 +13,14 @@ class FlatsController < ApplicationController
 
   def show
     @booking = Booking.new
+
+    @markers =
+      {
+        lat: @flat.latitude,
+        long: @flat.longitude,
+        image_url: helpers.asset_url('marker-editor.svg')
+
+      }
   end
 
   def new

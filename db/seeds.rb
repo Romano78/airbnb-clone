@@ -24,10 +24,19 @@ bill.save
 puts "creating #{bob}"
 puts "creating #{bill}"
 
+bill_random_address = ['4526 Av Harvard Montréal QC H4A 2X2', '4202 Country Dr, Vernon, TX',
+                       '16116 33rd Ave, Flushing, NY', '4, Place du Louvre  75042 Paris ', "8, rue de la Banque
+                       75084 Paris"]
+
+bob_random_address = ['1222 June Way, Pasadena, MD', '3151  Doctors Drive',
+                      '16 Villa Gaudelet, Paris', "2, rue Eugène Spuller 
+                      75003 Paris", "2, Place Baudoyer
+                      75181 Paris " ]
+
 3.times do
   bob_flat = Flat.new(
     name: Faker::TvShows::SouthPark.character,
-    address: Faker::Address.street_address,
+    address: bob_random_address.sample,
     description: Faker::TvShows::SouthPark.quote,
     rating: (1..5).to_a.sample,
     user_id: bob.id
@@ -42,7 +51,7 @@ puts "creating #{bill}"
 
   bill_flat =  Flat.new(
     name: Faker::TvShows::SouthPark.character,
-    address: Faker::Address.street_address,
+    address: bill_random_address.sample,
     description: Faker::TvShows::SouthPark.quote,
     rating: (1..5).to_a.sample,
     user_id: bill.id
@@ -71,8 +80,8 @@ url = [
 
 i = 0
 
+p 'while...'
 while i < url.length
-  p 'while...'
   file = URI.open(url[i])
   photo = Flat.find(i + 1).photo.attach(io: file, filename: "#{Flat.find(i + 1).name.downcase.gsub(' ', '_')}.jpg",
                                         content_type: 'image/jpg')

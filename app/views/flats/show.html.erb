@@ -1,7 +1,6 @@
 
 
 <% if @flat.photo.attached? %>
-
   <div class="map" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path @flat.photo.key %>)"></div>
 <% else %>
     <div class="map" style="background-image: url('https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200)"></div>
@@ -16,7 +15,10 @@
               <div class="flat-show-card">
                 <h2>a bit about more about this flat....</h2>
                 <p><%= @flat.description %></p>
-                <div   div class="map" style="background-image: url('https://api.mapbox.com/styles/v1/mapbox/outdoors-v11/static/-119.8615,34.4143,15.69,0/300x200?access_token=pk.eyJ1Ijoicm9tYW5vNzUiLCJhIjoiY2s5ZGMxZXlwMDI1cDNmcGI2dXgzeW1kciJ9.HAqoC59TN-sScg7mC0uvGw')"></div>
+                <div class="map-container" id="map" style="width: 100%; height: 600px;" 
+                    data-markers="<%= @markers.to_json %>"   
+                    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" 
+                ></div>
               </div>
         </div>
         <div class="col-4">
